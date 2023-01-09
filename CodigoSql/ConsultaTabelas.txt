@@ -1,0 +1,16 @@
+select
+	tabelapessoa.Pessoa_id,
+	tabelapessoa.Nome,
+	tabelapessoa.CPF,
+	tabelapessoa.Idade,
+	tabelapessoa.Sexo,
+	tabelaendereco.Tipo,
+	tabelaendereco.Logradouro,
+	tabelaendereco.Numero,
+	tabelaendereco.Complemento,
+	tabelaendereco.Cep,
+	tabelaendereco.Cidade,
+	tabelaendereco.Estado 
+from
+	tabelapessoa
+	inner join tabelaendereco on tabelapessoa.Pessoa_id = tabelaendereco.Pessoa_id;

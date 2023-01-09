@@ -1,0 +1,14 @@
+CREATE TABLE `tabelaendereco` (
+  `Endereco_id` int NOT NULL AUTO_INCREMENT,
+  `Tipo` varchar(10) NOT NULL,
+  `Logradouro` varchar(250) NOT NULL,
+  `Numero` varchar(10) NOT NULL,
+  `Complemento` varchar(100) DEFAULT NULL,
+  `Cep` decimal(10,0) NOT NULL,
+  `Cidade` varchar(250) NOT NULL,
+  `Estado` char(2) NOT NULL,
+  `Pessoa_id` int NOT NULL,
+  PRIMARY KEY (`Endereco_id`),
+  KEY `Endereco_FK` (`Pessoa_id`),
+  CONSTRAINT `Endereco_FK` FOREIGN KEY (`Pessoa_id`) REFERENCES `tabelapessoa` (`Pessoa_id`)
+);
